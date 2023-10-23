@@ -3,6 +3,8 @@ package org.hootin.v8jisu.properties;
 import org.springframework.util.StringUtils;
 import org.hootin.v8jisu.constants.Constant;
 
+import java.util.Objects;
+
 /**
  * api客户端参数配置
  *
@@ -31,11 +33,11 @@ public class V8ClientConfig {
     public static void resetConfig() {
         String prefix = Constant.propertiesPrefix + ".client.";
         String apiExpireTimeSeconds = System.getProperty(prefix + "apiExpireTimeSeconds");
-        if (!StringUtils.containsWhitespace(apiExpireTimeSeconds)) {
+        if (Objects.nonNull(apiExpireTimeSeconds)) {
             V8ClientConfig.apiExpireTimeSeconds = Integer.parseInt(apiExpireTimeSeconds);
         }
         String maxApiConnect = System.getProperty(prefix + "maxApiConnect");
-        if (!StringUtils.containsWhitespace(maxApiConnect)) {
+        if (Objects.nonNull(maxApiConnect)) {
             V8ClientConfig.maxApiConnect = Integer.parseInt(maxApiConnect);
         }
     }
