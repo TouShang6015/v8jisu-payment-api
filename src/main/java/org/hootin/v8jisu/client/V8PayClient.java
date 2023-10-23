@@ -41,9 +41,6 @@ public class V8PayClient {
      * @return
      */
     public static V8ApiService createService() {
-        V8ClientConfig.resetConfig();
-        V8AccountConfig.resetConfig();
-
         OkHttpClient client = getClient();
 
         Retrofit retrofit = new Retrofit.Builder()

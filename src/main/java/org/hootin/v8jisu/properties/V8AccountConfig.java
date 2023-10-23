@@ -1,10 +1,6 @@
 package org.hootin.v8jisu.properties;
 
 import lombok.Data;
-import org.springframework.util.StringUtils;
-import org.hootin.v8jisu.constants.Constant;
-
-import java.util.Objects;
 
 /**
  * 商户配置类
@@ -32,16 +28,12 @@ public class V8AccountConfig {
         return appKey;
     }
 
-    public static void resetConfig() {
-        String prefix = Constant.propertiesPrefix + ".account.";
-        String appId = System.getProperty(prefix + "appId");
-        if (Objects.nonNull(appId)) {
-            V8AccountConfig.appId = appId;
-        }
-        String appKey = System.getProperty(prefix + "appKey");
-        if (Objects.nonNull(appKey)) {
-            V8AccountConfig.appKey = appKey;
-        }
+    public static void setAppId(String appId) {
+        V8AccountConfig.appId = appId;
+    }
+
+    public static void setAppKey(String appKey) {
+        V8AccountConfig.appKey = appKey;
     }
 
 }
