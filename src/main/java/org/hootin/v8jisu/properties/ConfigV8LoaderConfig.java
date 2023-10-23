@@ -15,7 +15,7 @@ public class ConfigV8LoaderConfig implements InitializingBean {
     private Environment environment;
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         // api client config
         String clientPrefix = Constant.propertiesPrefix + ".client.";
         String apiExpireTimeSeconds = environment.getProperty(clientPrefix + "apiExpireTimeSeconds");

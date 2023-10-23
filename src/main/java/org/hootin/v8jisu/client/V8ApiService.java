@@ -88,7 +88,7 @@ public class V8ApiService {
      * @return
      */
     public OrderInfoResponse queryOrdersBatch(int limit, int page) {
-        return execute(api.queryOrdersBatch("order", V8AccountConfig.getAppId(), V8AccountConfig.getAppKey(), limit, page));
+        return execute(api.queryOrdersBatch("orders", V8AccountConfig.getAppId(), V8AccountConfig.getAppKey(), limit, page));
     }
 
     // -------------------------------------------------------------------
