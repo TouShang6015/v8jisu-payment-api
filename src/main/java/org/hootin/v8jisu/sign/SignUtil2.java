@@ -60,7 +60,7 @@ public class SignUtil2 {
         for (Field field : fields) {
             field.setAccessible(true);
             try {
-                map.put(field.getName(), (String) field.get(object));
+                map.put(field.getName(), String.valueOf(field.get(object)));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
                 throw new RuntimeException("对象转换Map异常");
