@@ -8,7 +8,7 @@ import org.hootin.v8jisu.entity.response.MapiResponse;
 import org.hootin.v8jisu.entity.response.OrderInfoResponse;
 import org.hootin.v8jisu.entity.response.SettlementRecordResponse;
 import org.hootin.v8jisu.properties.V8AccountConfig;
-import org.hootin.v8jisu.sign.SignUtil;
+import org.hootin.v8jisu.sign.SignUtil2;
 import retrofit2.HttpException;
 
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class V8ApiService {
     public MapiResponse mapi(MapiRequest request) {
         if (Objects.isNull(request))
             throw new RuntimeException("V8ApiService error [API - mapi]：请求参数不能为空");
-        request.setSign(SignUtil.getSign(request));
+        request.setSign(SignUtil2.getSign(request));
         request.setSign_type("MD5");
         return execute(api.mapi(request));
     }
